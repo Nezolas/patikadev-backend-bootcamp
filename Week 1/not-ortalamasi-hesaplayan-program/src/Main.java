@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args) {
         /*
         kodlari tekrara dusurmemek icin ders isimleri bir string arrayinin icerisinde tutuluyor,
-        karsilik gelecek notlar ise classes arrayinin uzunlugu referans alinarak tutuluyor.
+        karsilik gelecek notlar ise classes arrayinin uzunlugu referans alinarak olusturulan notes arrayinin icerisinde tutuluyor.
         NOT: Program, kullanici girdilerinin hepsinin 0-100 arasi olacagi dusunulerek tasarlanmistir.
         */
 
