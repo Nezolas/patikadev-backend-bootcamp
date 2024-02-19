@@ -23,7 +23,7 @@ public class Main {
             sum += notes[j];
         }
         // toplam, array icerisine yazilan derslerin sayisina bolunerek ortalama aliniyor.
-        avarage = sum / classes.length;
+        avarage = (double) sum / classes.length;
         System.out.println("Derslerinizin ortalamasi: " + avarage);
         var pass = (60 < avarage) ? "Sınıfı Geçti" : "Sınıfta Kaldı";
         System.out.print("***** " + pass + " *****");
