@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         String[] gn = {"Armut", "Elma", "Domates", "Muz", "Patlıcan"}; //Grocery name holding in this array
