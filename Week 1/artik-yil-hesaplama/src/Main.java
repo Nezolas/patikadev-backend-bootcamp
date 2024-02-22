@@ -7,9 +7,11 @@ public class Main {
         Scanner inp = new Scanner(System.in);
         year = inp.nextInt();
         // leap year calculating
-        if(year % 100 != 0 && year % 4 == 0  || year % 400 == 0 )
-            System.out.println(year + " bir artık yıldır!");
-        else
+        boolean test = (year % 100 != 0 && year % 4 == 0)  || year % 400 == 0;
+        if (test == false) {
             System.out.println(year + " bir artık yıl değildir.");
+        } else if (test == true) {
+            System.out.println(year + " bir artık yıldır!");
+        }
     }
 }
