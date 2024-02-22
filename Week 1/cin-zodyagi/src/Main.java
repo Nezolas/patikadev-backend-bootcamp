@@ -48,9 +48,6 @@ public class Main {
                     System.out.println("Koyun");
                     break;
             }
-
-
         }
-
     }
 }
