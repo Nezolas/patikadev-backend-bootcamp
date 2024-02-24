@@ -5,6 +5,7 @@ public class Main {
 
         // Getting distance, age, and trip type information from the user
         double totalCost = 0;
+        double normalFare;
         int distance, age, flightType;
 
         System.out.print("EMesafeyi km türünden giriniz: ");
@@ -17,7 +18,7 @@ public class Main {
         // Checking the validity of the entered data
         if (distance > 0 && age > 0 && (flightType == 1 || flightType == 2)) {
             // Calculating the normal ticket fare
-            double normalFare = distance * 0.10;
+            normalFare = distance * 0.10;
 
             // Applying age discounts
             if (age < 12)
