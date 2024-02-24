@@ -12,6 +12,6 @@ public class Main {
             }
         }
         while(n % 2 == 0);
-        System.out.println("Toplam:" + sum );
+        System.out.println("Toplam: " + sum );
     }
 }
