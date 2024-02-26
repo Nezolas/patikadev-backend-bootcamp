@@ -13,8 +13,10 @@ public class Main {
             System.out.print("Parolanız : ");
             password = input.nextLine();
 
+            // Kullanıcı adı ve şifre kontrolü
             if (userName.equals("patika") && password.equals("dev123")) {
                 System.out.println("Merhaba, Kodluyoruz Bankasına Hoşgeldiniz!");
+                // Kullanıcının işlem seçenekleri
                 do {
                     System.out.println("1-Para yatırma\n" +
                             "2-Para Çekme\n" +
@@ -23,13 +25,16 @@ public class Main {
                     System.out.print("Lütfen yapmak istediğiniz işlemi seçiniz : ");
                     select = input.nextInt();
 
+                    // Kullanıcının seçimi
                     switch (select) {
                         case 1:
+                            // Para yatırma işlemi
                             System.out.print("Para miktarı : ");
                             int price = input.nextInt();
                             balance += price;
                             break;
                         case 2:
+                            // Para çekme işlemi
                             System.out.print("Para miktarı : ");
                             price = input.nextInt();
                             if (price > balance) {
@@ -39,22 +44,28 @@ public class Main {
                             }
                             break;
                         case 3:
+                            // Bakiye sorgulama işlemi
                             System.out.println("Bakiyeniz : " + balance);
                             break;
                         case 4:
+                            // Çıkış yapma işlemi
                             System.out.println("Tekrar görüşmek üzere.");
                             break;
                         default:
+                            // Geçersiz seçenek durumu
                             System.out.println("Geçersiz bir seçim yaptınız. Lütfen tekrar deneyiniz.");
                     }
                 } while (select != 4);
                 break;
             } else {
+                // Hatalı giriş durumu
                 right--;
                 System.out.println("Hatalı kullanıcı adı veya şifre. Tekrar deneyiniz.");
                 if (right == 0) {
+                    // Hesap bloke olursa
                     System.out.println("Hesabınız bloke olmuştur lütfen banka ile iletişime geçiniz.");
                 } else {
+                    // Kalan deneme hakkı
                     System.out.println("Kalan Hakkınız : " + right);
                 }
             }
