@@ -2,23 +2,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        int int1, int2;
+        double double1, double2;
 
-        // Kullanıcıdan bir tam sayı ve bir ondalıklı sayı girmesini iste
-        System.out.print("Bir tam sayı girin: ");
-        int tamSayi = scanner.nextInt();
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Bir tam sayı giriniz: ");
+        int1 = inp.nextInt();
 
-        System.out.print("Bir ondalıklı sayı girin: ");
-        double ondalikliSayi = scanner.nextDouble();
+        System.out.print("Bir ondalıklı sayı giriniz: ");
+        double1 = inp.nextDouble();
 
-        // Tam sayıyı ondalıklı sayıya dönüştürerek ve ekrana yazdır
-        double tamSayiOndalikli = (double) tamSayi;
-        System.out.println("Tam sayıyı ondalıklı sayıya dönüştürüldü: " + tamSayiOndalikli);
+        double2 = (double) int1 ;
+        System.out.println("Tam sayıyı ondalıklı sayıya dönüştürüldü: " + double2);
 
-        // Ondalıklı sayıyı tam sayıya dönüştürerek ve ekrana yazdır
-        int ondalikliSayiTam = (int) ondalikliSayi;
-        System.out.println("Ondalıklı sayıyı tam sayıya dönüştürüldü: " + ondalikliSayiTam);
-
-        scanner.close();
+        int2 = (int) double1;
+        System.out.println("Ondalıklı sayı tam sayıya dönüştürüldü: " + int2);
     }
 }
