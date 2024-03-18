@@ -55,8 +55,15 @@ public class Player {
         this.setCharacterName(characters.getName());
     }
 
+    public void printInfo(){
+        out.println("Seçili Silah: " + this.getInventory().getWeapon().getName() +
+                " Hasar: " + this.getDamage() +
+                " Sağlık " + this.getHealth() +
+                " Kalan Bakiye: " + this.getCoin());
+    }
+
     public int getDamage() {
-        return damage;
+        return damage + this.getInventory().getWeapon().getDamage();
     }
 
     public void setDamage(int damage) {

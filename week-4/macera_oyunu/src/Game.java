@@ -13,8 +13,10 @@ public class Game {
         Player player = new Player(playerName);
         out.println(player.getName() + " Karakterini sec!");
         player.selectChar();
+
+        Location location = null;
         while(true){
-            Location location = null;
+            player.printInfo();
             out.println();;
             out.println("------------ Bolgeler ------------");
             out.println("1- Güvenli Ev ");

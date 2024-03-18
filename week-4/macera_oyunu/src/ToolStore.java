@@ -38,7 +38,7 @@ public class ToolStore extends NormalLocation {
         }
     }
     public void buyWeapon(){
-        System.out.println("Silahinizi seçiniz: ");
+        System.out.print("Silahınızı seçiniz: ");
         int selectWeaponID = input.nextInt();
         while (selectWeaponID < 1 || selectWeaponID > Weapon.weapons().length){
             System.out.println("Lütfen Geçerli Bİr Seçim Yapınız!");
@@ -52,7 +52,7 @@ public class ToolStore extends NormalLocation {
                 System.out.println(selectedWeapon.getName() + " Silahını aldınız.");
                 int balance = this.getPlayer().getCoin() - selectedWeapon.getPrice();
                 this.getPlayer().setCoin(balance);
-                System.out.println("KALAN BAKIYE: "+ this.getPlayer().getCoin());
+               // System.out.println("KALAN BAKIYE: "+ this.getPlayer().getCoin());
                 //System.out.println("eski silah: " + this.getPlayer().getInventory().getWeapon().getName());
                 this.getPlayer().getInventory().setWeapon(selectedWeapon);
                 //System.out.println("suanki silah: " + this.getPlayer().getInventory().getWeapon().getName());
