@@ -8,14 +8,16 @@ public class Player {
     private String name;
     private String characterName;
     private Scanner input = new Scanner(System.in);
+    private Inventory inventory;
 
     public Player(String name) {
         this.name = name;
+        this.inventory = new Inventory();
     }
 
     public void selectChar(){
 
-        Characters[] charList = {new Samurai(), new Archer(), new Knight(),  new NewCharacter()};
+        Characters[] charList = {new Samurai(), new Archer(), new Knight()};
 
         for(Characters characters : charList){
             System.out.println("ID: " +characters.getId() +
@@ -36,9 +38,6 @@ public class Player {
             case 3:
                 initPlayer(new Knight());
                 break;
-            case 4:
-                initPlayer(new NewCharacter());
-                break;
             default:
                 initPlayer(new Samurai());
                 break;
@@ -48,6 +47,7 @@ public class Player {
                 " Sağlığı: " + this.getHealth() +
                 " Parası: " + this.getCoin());
     }
+
     public void initPlayer(Characters characters){
         this.setDamage(characters.getDamage());
         this.setHealth(characters.getHealth());
@@ -93,5 +93,13 @@ public class Player {
 
     public void setCharacterName(String characterName) {
         this.characterName = characterName;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
 }
