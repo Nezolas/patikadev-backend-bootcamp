@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -11,12 +12,14 @@ public class Main {
             list[i] = i + 1;
         }
         System.out.print("Yazdırmak istediğiniz indeksi giriniz: ");
-        int index = input.nextInt();
         try{
+            int index = input.nextInt();
             int value = fromList(list, index);
             System.out.println("Indeksinizin içerisindeki değer: " + value);
         }catch (ArrayIndexOutOfBoundsException e){
             System.out.println("Liste dışında değer girildi. ");
+        }catch (InputMismatchException e){
+            System.out.println("Sayı dışında değer girildi.");
         }
     }
     public static int fromList(int list[], int index){
