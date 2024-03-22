@@ -1,10 +1,21 @@
+import java.util.Comparator;
+
+
 // Book class implementing Comparable interface
-public class Book implements Comparable<Book>{
+public class Book {
     private String bookName;
     private int printLength;
     private String authorName;
     private String publicationSeason;
     private int publicationYear;
+
+    public Book(String bookName, int printLength, String authorName, String publicationSeason, int publicationYear) {
+        this.bookName = bookName;
+        this.printLength = printLength;
+        this.authorName = authorName;
+        this.publicationSeason = publicationSeason;
+        this.publicationYear = publicationYear;
+    }
 
     public String getBookName() {
         return bookName;
@@ -45,17 +56,20 @@ public class Book implements Comparable<Book>{
     public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
     }
+}
+class bookLengthComp implements Comparator<Book>
+{
 
-    public Book(String bookName, int printLength, String authorName, String publicationSeason, int publicationYear) {
-        this.bookName = bookName;
-        this.printLength = printLength;
-        this.authorName = authorName;
-        this.publicationSeason = publicationSeason;
-        this.publicationYear = publicationYear;
+    public int compare(Book b1, Book b2)
+    {
+        return b1.getPrintLength()-b2.getPrintLength();
     }
-    @Override
-    public int compareTo(Book another) {
-        return this.bookName.compareTo(another.bookName);
-    }
+}
 
-  }
+class bookNameComp implements Comparator<Book>
+{
+    public int compare(Book b1, Book b2)
+    {
+        return b1.getBookName().compareTo(b2.getBookName());
+    }
+}
