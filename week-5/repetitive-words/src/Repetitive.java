@@ -14,7 +14,7 @@ public class Repetitive {
         String[] words = text.split("\\s+");
 
         HashMap<String, Integer> wordCounter = new HashMap<>();
-
+        // this loop counting the every words
         for(int i = 0; i < words.length; i++) {
             String wordLowForm = words[i].toLowerCase();
             if (wordCounter.containsKey(wordLowForm)) {
@@ -24,13 +24,14 @@ public class Repetitive {
                 wordCounter.put(wordLowForm, 1);
             }
         }
-
+        //this loop find the most repetitive words in the text
         for (Map.Entry<String, Integer> entry : wordCounter.entrySet()) {
             if (entry.getValue() > maxCount) {
                 mostRepetitive = entry.getKey();
                 maxCount = entry.getValue();
             }
         }
+        //result print to screen
         System.out.println("**************************************************************");
         System.out.println("Metinde en çok tekrar eden kelime: " + "\"" + mostRepetitive + "\" " +"\n" + "Tekrar Sayısı: " + maxCount  );
         System.out.println("***************************************************************");
