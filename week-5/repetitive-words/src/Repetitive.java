@@ -7,7 +7,7 @@ public class Repetitive {
         String mostRepetitive = "";
         int maxCount = 0;
         Scanner input = new Scanner(System.in);
-        System.out.print("Metni girin: ");
+        System.out.println("Tekrar eden kelimeyi bulmak istediğiniz metni aşağıya giriniz: ");
         String text = input.nextLine();
 
         // There is an explanation for the split method in the fallowing website:  https://stackoverflow.com/questions/225337/how-to-split-a-string-with-any-whitespace-chars-as-delimiters
@@ -31,7 +31,9 @@ public class Repetitive {
                 maxCount = entry.getValue();
             }
         }
+        System.out.println("**************************************************************");
         System.out.println("Metinde en çok tekrar eden kelime: " + "\"" + mostRepetitive + "\" " +"\n" + "Tekrar Sayısı: " + maxCount  );
+        System.out.println("***************************************************************");
 
     }
 }
