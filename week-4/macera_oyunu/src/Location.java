@@ -5,10 +5,12 @@ public abstract class Location {
     private String name;
     public static Scanner input = new Scanner(System.in);
 
+
     public Location(Player player, String name) {
         this.player = player;
         this.name = name;
     }
+
     public abstract boolean onLocation();
 
     public Player getPlayer() {
