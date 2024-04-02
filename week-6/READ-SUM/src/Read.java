@@ -17,9 +17,9 @@ public class Read {
                 sum+= num;
             }
 
-            System.out.println("Toplam: " + sum);
+            System.out.println("Dosyadaki sayılar toplamı: " + sum);
         } catch (IOException e) {
-            System.err.println("Dosya okuma hatası: " + e.getMessage());
+            System.err.println("Oluşan Hata: " + e.getMessage());
         }
     }
 }
