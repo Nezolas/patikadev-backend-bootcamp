@@ -8,11 +8,13 @@ public class DBConnect {
 
     public static  void main(String[] args){
         Connection connect = null;
+
         String sql = "SELECT * FROM employees";
         try{
             connect = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
             Statement st = connect.createStatement();
-            String
+
+
             ResultSet data = st.executeQuery(sql);
             while (data.next()){
                 System.out.println("---------------------------------------------------------------");
