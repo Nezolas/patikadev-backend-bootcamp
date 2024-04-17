@@ -24,7 +24,7 @@ public class BookManager {
 
     public boolean delete(int id) {
         if (this.getById(id) == null) {
-            Helper.showMessage(id + " ID Kayıtlı araç bulunamadı.");
+            Helper.showMsg(id + " ID Kayıtlı araç bulunamadı.");
             return false;
         }
         return this.bookDao.delete(id);

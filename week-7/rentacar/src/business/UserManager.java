@@ -11,7 +11,7 @@ public class UserManager {
         this.userDao = new UserDao();
     }
     public User findByLogin(String username, String password) {
-        // farklı işlemler yapabiliriz
+
         return this.userDao.findByLogin(username, password);
     }
 }

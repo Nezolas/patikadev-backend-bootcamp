@@ -35,7 +35,7 @@ public class BrandManager {
 
     public boolean save(Brand brand) {
         if (brand.getId() != 0) {
-            Helper.showMessage("Ürün müsait");
+            Helper.showMsg("Ürün müsait");
         }
         return this.brandDao.save(brand);
     }
@@ -46,14 +46,14 @@ public class BrandManager {
 
     public boolean update(Brand brand) {
         if (this.getById(brand.getId()) == null) {
-            Helper.showMessage("Bulunamadı!");
+            Helper.showMsg("Bulunamadı!");
         }
         return this.brandDao.update(brand);
     }
 
     public boolean delete(int id) {
         if (this.getById(id) == null) {
-            Helper.showMessage(id + " ID kayıtlı marka bulunamadı");
+            Helper.showMsg(id + " ID kayıtlı marka bulunamadı");
             return false;
         }
         for (Model model : this.modelManager.getByListBrandId(id)){
