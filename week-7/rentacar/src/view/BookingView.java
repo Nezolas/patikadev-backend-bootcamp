@@ -29,7 +29,7 @@ public class BookingView extends Layout {
         this.bookManager = new BookManager();
 
         this.add(container);
-        guiInitilaze(300, 600);
+        guiInitialize(300, 600);
 
         lbl_car_info.setText("Araç : " +
                 this.car.getPlate() + " / " +

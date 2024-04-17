@@ -5,9 +5,6 @@ import core.Helper;
 import entity.User;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class LoginView extends Layout {
     private JPanel container;

@@ -25,7 +25,7 @@ public class CarView extends Layout {
         this.carManager = new CarManager();
         this.modelManager = new ModelManager();
         this.add(container);
-        this.guiInitilaze(300,400);
+        this.guiInitialize(300,400);
 
 
         this.cmb_color.setModel(new DefaultComboBoxModel<>(Car.Color.values()));

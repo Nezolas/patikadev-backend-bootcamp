@@ -84,7 +84,7 @@ public class AdminView extends Layout {
         this.carManager = new CarManager();
         this.bookManager = new BookManager();
         this.add(container);
-        this.guiInitilaze(1000, 500);
+        this.guiInitialize(1000, 500);
         this.user = user;
         if (this.user == null) {
             dispose();

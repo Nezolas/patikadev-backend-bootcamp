@@ -4,7 +4,6 @@ import core.Helper;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 public class Layout extends JFrame {
 
 
-    public void guiInitilaze(int width, int height) {
+    public void guiInitialize(int width, int height) {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setTitle("Rent a Car");
         this.setSize(width, height);
