@@ -1,5 +1,7 @@
 package view;
 
+import core.Helper;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -9,14 +11,12 @@ import java.util.ArrayList;
 
 public class Layout extends JFrame {
 
-    public void guiInitialize(int width, int height) {
+
+    public void guiInitilaze(int width, int height) {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setTitle("Rent a Car");
         this.setSize(width, height);
-
-        int x = (Toolkit.getDefaultToolkit().getScreenSize().width - this.getSize().width) / 2;
-        int y = (Toolkit.getDefaultToolkit().getScreenSize().height - this.getSize().height) / 2;
-        this.setLocation(x, y);
+        this.setLocation(Helper.getLocationPoint("x", this.getSize()), Helper.getLocationPoint("y", this.getSize()));
         this.setVisible(true);
     }
 
@@ -33,13 +33,13 @@ public class Layout extends JFrame {
         if (rows == null) {
             rows = new ArrayList<>();
         }
+
         for (Object[] row : rows) {
             model.addRow(row);
         }
     }
 
-
-    public int getTableSelectedRow(JTable table, int index) {
+    public int getTableSelectedRow(JTable table, int index){
         return Integer.parseInt(table.getValueAt(table.getSelectedRow(), index).toString());
     }
 
