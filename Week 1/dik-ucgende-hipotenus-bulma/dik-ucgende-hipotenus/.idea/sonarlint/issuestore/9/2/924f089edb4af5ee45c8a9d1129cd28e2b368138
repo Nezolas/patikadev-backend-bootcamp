@@ -1,11 +1,0 @@
-
-d
-java:S2184"BCast one of the operands of this addition operation to a "double".(¿Ì¤–øÿÿÿÿ8Š±àÃÜ1
-s
-java:S1128"QRemove this unnecessary import: java.lang classes are always implicitly imported.(Š‘…ûıÿÿÿÿ8±àÃÜ1
-A
-java:S1659"Declare "b" on a separate line.(äöÍÖşÿÿÿÿ8±àÃÜ1
-G	java:S106"+Replace this use of System.out by a logger.(éÀÄ»8±àÃÜ1
-G	java:S106
-"+Replace this use of System.out by a logger.(ÜÚúû8±àÃÜ1
-G	java:S106"+Replace this use of System.out by a logger.(‰‰øİ8±àÃÜ1

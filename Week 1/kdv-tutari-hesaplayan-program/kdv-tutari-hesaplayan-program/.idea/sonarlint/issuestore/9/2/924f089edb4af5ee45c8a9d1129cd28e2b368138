@@ -1,8 +1,0 @@
-
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉÆ½Šúÿÿÿÿ8øÂÂÜ1
-g
-java:S1659"EDeclare "tax_rate" and all following declarations on a separate line.(ÉÆ½Šúÿÿÿÿ8ıÂÂÜ1
-L	java:S106"+Replace this use of System.out by a logger.(ˆà±ºûÿÿÿÿ8ÿÂÂÜ1
-G	java:S106"+Replace this use of System.out by a logger.(ª»ê²8ÿÂÂÜ1
-L	java:S106"+Replace this use of System.out by a logger.(®ƒÒÆúÿÿÿÿ8ÿÂÂÜ1
-G	java:S106"+Replace this use of System.out by a logger.(¹á¬Ó8ÿÂÂÜ1
