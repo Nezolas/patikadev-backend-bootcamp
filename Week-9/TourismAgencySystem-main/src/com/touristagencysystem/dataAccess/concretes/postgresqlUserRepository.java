@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MysqlUserRepository implements IUserRepository {
+public class postgresqlUserRepository implements IUserRepository {
     public int login(String username_tcno, String password) {
         String query = "SELECT * FROM tbl_user WHERE ((tcNo=? OR username=?) AND password=?)";
         try(PreparedStatement ps = DBConnector.getPreparedStatement(query)){
@@ -16,8 +16,7 @@ public class MysqlUserRepository implements IUserRepository {
             ps.setString(2,username_tcno);
             ps.setString(3,password);
             ResultSet rs = ps.executeQuery();
-            //ps.close();
-            //rs.close();
+
             if(rs.next()){
                 return rs.getInt("id");
             }
@@ -34,8 +33,7 @@ public class MysqlUserRepository implements IUserRepository {
             if(rs.next()){
                 user = match(rs);
             }
-            //rs.close();
-            //ps.close();
+
         }catch (Exception e){
             e.printStackTrace();
         }
