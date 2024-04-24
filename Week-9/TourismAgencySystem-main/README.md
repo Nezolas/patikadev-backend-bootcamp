@@ -116,7 +116,7 @@ Aşağıdaki listede soruların cevaplarına karşılık gelen kodların yerleri
   18 - presentation.gui -> ReservationGUI   -> ReservationGUI   -> line 25
   19 - presentation.gui -> ReservationGUI   -> ReservationGUI   -> line 39
 ```
-https://youtu.be/rQ_5madsPvc
+[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/rQ_5madsPvc)
 
 ## Gerekli Olabilecek Bağlantılar
 
