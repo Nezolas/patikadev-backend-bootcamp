@@ -119,6 +119,10 @@ Aşağıdaki listede soruların cevaplarına karşılık gelen kodların yerleri
 ## Proje Tanıtım Videosu 
 [![Watch the video](https://png.pngtree.com/png-vector/20190215/ourmid/pngtree-play-video-icon-graphic-design-template-vector-png-image_530837.jpg)](https://youtu.be/rQ_5madsPvc)
 
+#### Yönetici Giriş Bİlgileri
+Kullanıcı Adı: Admin   
+Şifre: 0000
+
 ## Gerekli Olabilecek Bağlantılar
 
  - [AMPPS](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
