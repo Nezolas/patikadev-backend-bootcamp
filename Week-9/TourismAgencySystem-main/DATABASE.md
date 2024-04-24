@@ -102,4 +102,22 @@ CREATE TABLE tbl_user (
   PRIMARY KEY (id)
 );
 ```
+```
+INSERT INTO tbl_pensiontype (pension_name) VALUES
+('Ultra Herşey Dahil'),
+('Herşey Dahil'),
+('Oda Kahvaltı'),
+('Tam Pansiyon'),
+('Yarım Pansiyon'),
+('Sadece Yatak'),
+('Alkol Hariç Full credit');
 
+INSERT INTO tbl_featuretype (id, feature_name) VALUES
+(1, 'Ücretsiz Otopark'),
+(2, 'SPA'),
+(3, '7/24 Oda Servisi'),
+(4, 'Ücretsiz WiFi'),
+(5, 'Yüzme Havuzu'),
+(6, 'Fitness Center'),
+(7, 'Hotel Concierge');
+```
