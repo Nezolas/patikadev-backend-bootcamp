@@ -1,5 +1,5 @@
 
-# PATIKA+ TURIZM ACENTA SISTEMI PROJESI
+# PATIKA+ TURIZM ACENTE SISTEMI PROJESI
 
 #### UYGULAMA İSTERLERİ:
 Patika Turizm Acentesi pek çok otel ile anlaşma yaparak otellerin odalarını müşterilere rezerve etmektedir. Acente tarafından admin yetkisine sahip ilk kişi yazılımcı tarafından veri tabanına kaydedilecektir. Admin yetkisine sahip kişi de sisteme login olup hem admin hem acente çalışanı ekleyebilecektir. Acente çalışanları sisteme otel, oda kaydedecek ve müşterilerin taleplerine göre oda araması yapıp rezervasyon işlemi yapacaktır. Müşterilerin sisteme erişimi olmadığını, telefon veya yüz yüze destek aldığı bir senaryo düşünün.
@@ -116,7 +116,7 @@ Aşağıdaki listede soruların cevaplarına karşılık gelen kodların yerleri
   18 - presentation.gui -> ReservationGUI   -> ReservationGUI   -> line 25
   19 - presentation.gui -> ReservationGUI   -> ReservationGUI   -> line 39
 ```
-
+https://youtu.be/rQ_5madsPvc
 
 ## Gerekli Olabilecek Bağlantılar
 
