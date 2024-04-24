@@ -16,7 +16,7 @@ public class LoginManager implements ILoginService {
     public boolean login(String userName_tcNo, String password) {
         int id;
         if((id = loginRepository.login(userName_tcNo,password)) != -1){
-            // Kullanıcı tipine göre login olacak
+            // Yönetici veya çalışan olma durumuna göre Giriş İşlemi
             User user = loginRepository.getUserByID(id);
             switch (user.getUserType()){
                 case "admin":

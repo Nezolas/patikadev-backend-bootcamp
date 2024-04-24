@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class postgresqlUserRepository implements IUserRepository {
+public class MysqlUserRepository implements IUserRepository {
     public int login(String username_tcno, String password) {
         String query = "SELECT * FROM tbl_user WHERE ((tcNo=? OR username=?) AND password=?)";
         try(PreparedStatement ps = DBConnector.getPreparedStatement(query)){

@@ -179,22 +179,13 @@ public class EmployeeHotelDetailGUI extends Layout {
         tbl_room.setComponentPopupMenu(tbl_room_popup);
         // Room - END
 
-        //MaskFormatter ile formattedTextField üzerinde maske gözükecekti ona göre tarih alacaktık
-        /*txt_season_startDate.setColumns(8);
-        try {
-            MaskFormatter dateMask = new MaskFormatter("##/##/####");
-            dateMask.install(txt_season_startDate);
-        } catch (ParseException e) {
-            Notify.showMsg("Hata","Tarihleri doğru formatta giriniz");
-        }*/
-
         // Loading Comboboxes for management
         loadPensionCombobox();
         loadHotelFeaturesCombobox();
         loadRoomSeasonCombobox();
         loadRoomPensionCombobox();
 
-        // Adding season to hotel
+        // Değerlendirme Formu 11
         btn_addSeason.addActionListener(e -> {
             if(isValidDates(txt_season_startDate.getText(),txt_season_endDate.getText())){
                 if(detailManager.addSeason(
@@ -208,7 +199,7 @@ public class EmployeeHotelDetailGUI extends Layout {
                 }
             }
         });
-        // Adding pension to hotel
+        // Değerlendirme Formu 12
         btn_addPensiontoHotel.addActionListener(e -> {
             if(Notify.confirm("sure")){
                 detailManager.addPensiontoHotel(
@@ -236,7 +227,7 @@ public class EmployeeHotelDetailGUI extends Layout {
             }
 
         });
-        // Değerlendirme Formu 11
+        // Değerlendirme Formu 13
         // Adding hotel room
         btn_addHotelRoom.addActionListener(e -> {
             if(Notify.isFieldEmpty(txt_room_type) || Notify.isFieldEmpty(txt_room_bedNumber) || !isNumeric(txt_room_bedNumber.getText()) || Notify.isFieldEmpty(txt_room_stock)|| !isNumeric(txt_room_stock.getText()) || Notify.isFieldEmpty(txt_room_price_child) || !isNumeric(txt_room_price_child.getText()) || Notify.isFieldEmpty(txt_room_price_adult) || !isNumeric(txt_room_price_adult.getText())){
@@ -246,7 +237,7 @@ public class EmployeeHotelDetailGUI extends Layout {
                         hotel.getHotelID(),
                         ((Season)cmb_room_season.getSelectedItem()).getId(),
                         ((Pension)cmb_room_pension.getSelectedItem()).getId(),
-                        txt_room_type.getText(),
+                        txt_room_type.getText(), // HATIRLATMA: Vakit kalırsa cmb_room_type olarak tasarlanabilir
                         Integer.parseInt(txt_room_bedNumber.getText()),
                         Integer.parseInt(txt_room_stock.getText()),
                         Integer.parseInt(txt_room_price_child.getText()),
@@ -346,4 +337,3 @@ public class EmployeeHotelDetailGUI extends Layout {
         return maybeNumeric != null && maybeNumeric.matches("[0-9]+");
     }
 }
-

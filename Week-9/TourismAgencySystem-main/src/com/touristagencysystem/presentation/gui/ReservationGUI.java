@@ -22,7 +22,7 @@ public class ReservationGUI extends Layout {
         this.repository = repository;
         txt_totalPrice.setText(String.valueOf(totalPrice));
 
-        // Değerlendirme Formu 16
+        // Değerlendirme Formu 18
         btn_reservation.addActionListener(e -> {
             if(Notify.isFieldEmpty(txt_customerName) || Notify.isFieldEmpty(txt_customerTcNo) || Notify.isFieldEmpty(txt_customerPhone) || Notify.isFieldEmpty(txt_customerEmail)){
                 Notify.showMsg("Uyarı","Lütfen Bilgilerinizi Eksiksiz Doldurunuz");
@@ -36,7 +36,7 @@ public class ReservationGUI extends Layout {
                         txt_customerEmail.getText(),
                         childNumber,
                         adultNumber)){
-                    // Değerlendirme Formu 17
+                    // Değerlendirme Formu 19
                     repository.decreaseStock(roomID);
                     gui.loadRezervationList();
                     Notify.showMsg("Başarılı","Rezervasyon Yapıldı");

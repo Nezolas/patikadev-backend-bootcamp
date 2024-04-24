@@ -19,9 +19,9 @@ public class LoginGUI extends Layout {
     public LoginGUI(ILoginService loginService){
         this.loginService = loginService;
         add(wrapper);
-        setGUILayout(400,400);
+        setGUILayout(300,250);
 
-        // Değerlendirme Formu 8
+        // Değerlendirme Formu 9
         btn_login.addActionListener(e -> {
             if(Notify.isFieldEmpty(txt_username_tcno) || Notify.isFieldEmpty(txt_password)){
                 Notify.showMsg("Hata","Lütfen alanları eksiksiz doldurunuz");

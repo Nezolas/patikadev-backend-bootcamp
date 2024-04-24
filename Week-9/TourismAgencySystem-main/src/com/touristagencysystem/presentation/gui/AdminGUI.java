@@ -106,4 +106,3 @@ public class AdminGUI extends Layout {
         }
     }
 }
-//"User ID","TC","Kullanıcı Adı","Şifre","İsim","Soyisim","Kullanıcı Tipi"

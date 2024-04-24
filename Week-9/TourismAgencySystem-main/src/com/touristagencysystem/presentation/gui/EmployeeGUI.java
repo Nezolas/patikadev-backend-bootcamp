@@ -62,6 +62,7 @@ public class EmployeeGUI extends Layout {
                 LoginGUI backToLogin = new LoginGUI(new LoginManager(new MysqlLoginRepository()));
             }
         });
+
         // Hotel Table - START
         mdl_hotel_list = new DefaultTableModel(){
             @Override
@@ -74,7 +75,7 @@ public class EmployeeGUI extends Layout {
         mdl_hotel_list.setColumnIdentifiers(col_hotel_list);
         row_hotel_list = new Object[col_hotel_list.length];
         tbl_hotel.setModel(mdl_hotel_list);
-        //tbl_hotel.getTableHeader().setReorderingAllowed(false);
+
 
         tbl_hotel.addMouseListener(new MouseAdapter() {
             @Override
@@ -120,7 +121,6 @@ public class EmployeeGUI extends Layout {
         loadHotelTable();
         // Hotel Table - END
 
-        // Değerlendirme Formu 18
         // tbl_rezervations - START
         mdl_rezervations = new DefaultTableModel();
         mdl_rezervations.setColumnIdentifiers(new Object[]{"Rezervasyon ID","Otel ID","Otel","Room ID","İsim Soyisim","TC","Telefon","Email","Çocuk","Yetişkin"});
@@ -188,12 +188,12 @@ public class EmployeeGUI extends Layout {
 
         JPopupMenu reservation = new JPopupMenu();
         reservation.add("Rezervasyon").addActionListener(e -> {
-            // Değerlendirme Formu 15
             if(txt_startDate.getText().isEmpty() || txt_endDate.getText().isEmpty()){
                 Notify.showMsg("Uyarı","Rezervasyon yaptırmak için tarih aralıkları giriniz");
                 return;
             }
             int days = employeeManager.calculateDay(txt_startDate.getText(),txt_endDate.getText());
+            // Değerlendirme Formu 14 - 17
             int totalPrice = (Integer.parseInt(tbl_search.getValueAt(tbl_search.getSelectedRow(),14).toString())*days)
                            + (Integer.parseInt(tbl_search.getValueAt(tbl_search.getSelectedRow(),15).toString())*days);
             ReservationGUI res = new ReservationGUI(
@@ -213,7 +213,7 @@ public class EmployeeGUI extends Layout {
 
 
 
-        // Değerlendirme Formu 9
+        // Değerlendirme Formu 10
         btn_addHotel.addActionListener(e -> {
             if(Notify.isFieldEmpty(txt_hotel_name) || Notify.isFieldEmpty(txt_hotel_email) || Notify.isFieldEmpty(txt_hotel_phoneNumber)){
                 Notify.showMsg("Uyarı","Lütfen Alanları Eksiksiz Doldurunuz");
@@ -232,7 +232,7 @@ public class EmployeeGUI extends Layout {
             }
         });
 
-        // Değerlendirme Formu 13
+        // Değerlendirme Formu 15
         btn_search.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -284,7 +284,7 @@ public class EmployeeGUI extends Layout {
         }
     }
 
-    // Değerlendirme Formu 14
+    // Değerlendirme Formu 16
     private void loadSearchTable(ArrayList<SearchResult> result){
         DefaultTableModel db = (DefaultTableModel) tbl_search.getModel();
         db.setRowCount(0);

@@ -14,8 +14,7 @@ public class MysqlLoginRepository implements ILoginRepository {
             ps.setString(2,username_tcno);
             ps.setString(3,password);
             ResultSet rs = ps.executeQuery();
-            //ps.close();
-            //rs.close();
+
             if(rs.next()){
                 return rs.getInt("id");
             }
@@ -27,7 +26,7 @@ public class MysqlLoginRepository implements ILoginRepository {
     public User getUserByID(int id){
         User user = null;
         String query = "SELECT * FROM tbl_user WHERE id="+id;
-        // PreparedStatement ve ResultSet ayrı yapıyorduk
+
         try(ResultSet rs = DBConnector.getPreparedStatement(query).executeQuery()){
             if(rs.next()){
                 user = new User(rs.getInt("id"),
@@ -38,8 +37,7 @@ public class MysqlLoginRepository implements ILoginRepository {
                         rs.getString("surname"),
                         rs.getString("usertype"));
             }
-            //rs.close();
-            //ps.close();
+
         }catch (Exception e){
             e.printStackTrace();
         }
