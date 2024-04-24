@@ -116,6 +116,7 @@ Aşağıdaki listede soruların cevaplarına karşılık gelen kodların yerleri
   18 - presentation.gui -> ReservationGUI   -> ReservationGUI   -> line 25
   19 - presentation.gui -> ReservationGUI   -> ReservationGUI   -> line 39
 ```
+## Proje Tanıtım Videosu 
 [![Watch the video](https://png.pngtree.com/png-vector/20190215/ourmid/pngtree-play-video-icon-graphic-design-template-vector-png-image_530837.jpg)](https://youtu.be/rQ_5madsPvc)
 
 ## Gerekli Olabilecek Bağlantılar
