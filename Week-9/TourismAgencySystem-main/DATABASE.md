@@ -102,7 +102,7 @@ CREATE TABLE tbl_user (
   PRIMARY KEY (id)
 );
 ```
-```mmysql
+```mysql
 INSERT INTO tbl_pensiontype (pension_name) VALUES
 ('Ultra Herşey Dahil'),
 ('Herşey Dahil'),
