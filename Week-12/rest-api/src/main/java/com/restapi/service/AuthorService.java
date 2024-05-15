@@ -3,6 +3,7 @@ package com.restapi.service;
 import com.restapi.dto.request.AuthorRequest;
 import com.restapi.dto.response.AuthorResponse;
 import com.restapi.entitiy.Author;
+import com.restapi.mapper.AuthorMapper;
 import com.restapi.repository.AuthorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
