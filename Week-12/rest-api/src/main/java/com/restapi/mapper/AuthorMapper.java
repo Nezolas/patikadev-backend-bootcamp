@@ -8,9 +8,10 @@ import org.mapstruct.MappingTarget;
 import org.springframework.context.annotation.Configuration;
 
 
+import javax.swing.*;
 import java.util.List;
 @Configuration
-@Mapper
+@Mapper(componentModel = "spring")
 
 public interface AuthorMapper {
     Author asEntity(AuthorRequest authorRequest);
