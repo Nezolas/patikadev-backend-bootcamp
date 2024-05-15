@@ -25,14 +25,14 @@ public class BookBorrowingService {
     }
 
     public BookBorrowing getById(Long id) {
-        return bookBorrowingRepository.findById(id).orElseThrow(() -> new RuntimeException(id + "id li Ödünç Alımı Bulunamadı !!!"));
+        return bookBorrowingRepository.findById(id).orElseThrow(() -> new RuntimeException(id + "Numaralı İşlem Bulunamadı."));
     }
 
 
     public BookBorrowing create(BookBorrowingRequest bookBorrowingRequest) {
 
         if (bookBorrowingRequest.getBookForBorrowingRequest().getStock() < 0) {
-            throw new RuntimeException("Ödünç almak istediğiniz kitabın stoğu yoktur !!!");
+            throw new RuntimeException("Ödünç Alma Başarısız: Stok Mevcut Değil.");
         }
 
         Book book = bookService.getById(bookBorrowingRequest.getBookForBorrowingRequest().getId());
@@ -55,11 +55,11 @@ public class BookBorrowingService {
         System.out.println("returnDateFromDb :" + returnDateFromDb);
         System.out.println("bookBorrowingUpdateRequest.getReturnDate : " + bookBorrowingUpdateRequest.getReturnDate());
         if (bookBorrowingFromDb.isEmpty()) {
-            throw new RuntimeException(id + "Güncellemeye çalıştığınız ödünç alım sistemde bulunamadı!!!.");
+            throw new RuntimeException(id + "Güncelleme Başarısız: Ödünç Alma Mevcut Değil.");
         }
 
         if (bookBorrowingUpdateRequest.getReturnDate() != null && returnDateFromDb == null)  {
-            System.out.println("ifffffffff");
+            System.out.println("null");
             Book book = bookBorrowingFromDb.get().getBook();
             book.setStock(book.getStock() + 1);
 
@@ -84,7 +84,7 @@ public class BookBorrowingService {
             bookBorrowingRepository.delete(bookBorrowing);
 
         } else {
-            throw new RuntimeException(id + "id li Ödünç Alımı sistemde bulunamadı !!!");
+            throw new RuntimeException(id + "Hata: Ödünç Ala Mevcut Değil.");
         }
     }
 }

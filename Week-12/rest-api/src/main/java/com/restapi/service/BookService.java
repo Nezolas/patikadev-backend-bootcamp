@@ -19,7 +19,7 @@ public class BookService {
     }
 
     public Book getById(Long id) {
-        return bookRepository.findById(id).orElseThrow(() -> new RuntimeException(id + "id li Kitap Bulunamadı !!!"));
+        return bookRepository.findById(id).orElseThrow(() -> new RuntimeException(id + "Id Sahibi Kitap Mevcut Değil."));
     }
 
     @Transactional
@@ -29,7 +29,7 @@ public class BookService {
         if (isBookExist.isEmpty()) {
             return this.bookRepository.save(book);
         }
-        throw new RuntimeException("Bu kitap daha önce sisteme kayıt olmuştur !!!");
+        throw new RuntimeException("Kayıt Yapılamadı: Sisteme Kayıtlı Kitap.");
     }
 
     public Book update(Long id, Book book) {
@@ -37,7 +37,7 @@ public class BookService {
         Optional<Book> bookFromDb = bookRepository.findById(id);
 
         if (bookFromDb.isEmpty()) {
-            throw new RuntimeException(id + "Güncellemeye çalıştığınız kitap sistemde bulunamadı. !!!.");
+            throw new RuntimeException(id + "Güncelleme Yapılamadı: Kitap Kayıtlı Değil.");
         }
 
         book.setId(id);
@@ -49,7 +49,7 @@ public class BookService {
         if (bookFromDb.isPresent()) {
             bookRepository.delete(bookFromDb.get());
         } else {
-            throw new RuntimeException(id + "id li Kitap sistemde bulunamadı !!!");
+            throw new RuntimeException(id + "Id Sahibi Kitap Sistemde Bulunamadı.");
         }
     }
 

@@ -18,12 +18,13 @@ public class AuthorService {
     private final AuthorRepository authorRepository;
     private final AuthorMapper authorMapper;
 
+
     public List<AuthorResponse> findAll() {
         return authorMapper.asOutput(authorRepository.findAll());
     }
 
     public AuthorResponse getById(Long id) {
-        return authorMapper.asOutput(authorRepository.findById(id).orElseThrow(() -> new RuntimeException(id + "id li Yazar Bulunamadı !!!")));
+        return authorMapper.asOutput(authorRepository.findById(id).orElseThrow(() -> new RuntimeException(id + "Id sahibi yazar bulunamadı.")));
     }
 
     public AuthorResponse create(AuthorRequest request) {
@@ -33,7 +34,7 @@ public class AuthorService {
             Author authorSaved = authorRepository.save(authorMapper.asEntity(request));
             return authorMapper.asOutput(authorSaved);
         }
-        throw new RuntimeException("Bu yazar daha önce sisteme kayıt olmuştur !!!");
+        throw new RuntimeException("Önceden Kaydedilmiş Yazar.");
     }
 
     public AuthorResponse update(Long id, AuthorRequest request) {
@@ -43,11 +44,11 @@ public class AuthorService {
         Optional<Author> isAuthorExist = authorRepository.findByNameAndBirthDateAndCountry(request.getName(), request.getBirthDate(), request.getCountry());
 
         if (authorFromDb.isEmpty()) {
-            throw new RuntimeException(id + "Güncellemeye çalıştığınız yazar sistemde bulunamadı. !!!.");
+            throw new RuntimeException(id + " Güncelleme Başarısız: Yazar Kaydı Mevcut Değil.");
         }
 
         if (isAuthorExist.isPresent()) {
-            throw new RuntimeException("Bu yazar daha önce sisteme kayıt olmuştur !!!");
+            throw new RuntimeException("Sisteme kayıtlı yazar.");
         }
         Author author = authorFromDb.get();
         authorMapper.update(author, request);
@@ -59,7 +60,7 @@ public class AuthorService {
         if (authorFromDb.isPresent()) {
             authorRepository.delete(authorFromDb.get());
         } else {
-            throw new RuntimeException(id + "id li Yazar sistemde bulunamadı !!!");
+            throw new RuntimeException(id + "Id Sahibi Yazar Bulunamadı.");
         }
     }
 

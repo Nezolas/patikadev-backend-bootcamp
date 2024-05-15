@@ -29,7 +29,7 @@ public class CategoryService {
         if (isCategoryExist.isEmpty()) {
             return categoryRepository.save(request);
         }
-        throw new RuntimeException("Bu kategori daha önce sisteme kayıt olmuştur !!!");
+        throw new RuntimeException("Daha Önce Kaydı Yapılmış Kategori!");
     }
 
     public Category update(Long id, Category request) {
@@ -39,11 +39,11 @@ public class CategoryService {
         Optional<Category> isCategoryExist = categoryRepository.findByName(request.getName());
 
         if (categoryFromDb.isEmpty()) {
-            throw new RuntimeException(id + "Güncellemeye çalıştığınız kategori sistemde bulunamadı. !!!.");
+            throw new RuntimeException(id + "Güncelleme Hatası: Kategori Sistemde Mevcut Değil");
         }
 
         if (isCategoryExist.isPresent()) {
-            throw new RuntimeException("Bu kategori daha önce sisteme kayıt olmuştur !!!");
+            throw new RuntimeException("Sistemde Kaydı Olan Kategori.");
         }
         request.setId(id);
         return categoryRepository.save(request);
@@ -54,12 +54,12 @@ public class CategoryService {
         List<Book> booksInCategory = bookService.findByCategoryId(id);
 
         if (!categoryFromDb.isPresent()) {
-            return id + " id li Kategori sistemde bulunamadı!!!";
+            return id + " Id Sahibi Kategori Bulunamadı.";
         } else if (!booksInCategory.isEmpty()) {
-            return id + " id li Kategoriye ait sistemde kayıtlı kitap mevcut! Silme işlemi yapılamadı.";
+            return id + "Silme Başarısız:  Id Sahibi Kategoriye ait kayıtlı kitap(lar) mevcut.";
         } else {
             categoryRepository.delete(categoryFromDb.get());
-            return "Kategori silme işlemi başarılı";
+            return "Başarı ile Silindi: Kategori";
         }
     }
 }

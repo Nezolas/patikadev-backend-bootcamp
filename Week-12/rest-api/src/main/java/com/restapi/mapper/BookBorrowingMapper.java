@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 
 @Mapper
-public class BookBorrowingMapper {
+public interface BookBorrowingMapper {
     BookBorrowing asEntity(BookBorrowingRequest bookBorrowingRequest);
 
     BookBorrowing asEntity(BookBorrowingUpdateRequest bookBorrowingUpdateRequest);

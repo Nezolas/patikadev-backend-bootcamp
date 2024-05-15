@@ -5,6 +5,6 @@ import com.restapi.entitiy.Book;
 import org.mapstruct.Mapper;
 
 @Mapper
-public class BookForBorrowingMapper {
+public interface BookForBorrowingMapper {
     Book asEntity(BookForBorrowingRequest bookForBorrowingRequest);
 }

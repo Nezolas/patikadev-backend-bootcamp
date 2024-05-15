@@ -5,11 +5,14 @@ import com.restapi.dto.response.AuthorResponse;
 import com.restapi.entitiy.Author;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
+import org.springframework.context.annotation.Configuration;
+
 
 import java.util.List;
-
+@Configuration
 @Mapper
-public class AuthorMapper {
+
+public interface AuthorMapper {
     Author asEntity(AuthorRequest authorRequest);
 
     AuthorResponse asOutput(Author author);

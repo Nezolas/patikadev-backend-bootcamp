@@ -21,7 +21,7 @@ public class PublisherService {
     }
 
     public PublisherResponse getById(Long id) {
-        Publisher p = publisherRepository.findById(id).orElseThrow(() -> new RuntimeException(id + "id li Yayın Evi Bulunamadı !!!"));
+        Publisher p = publisherRepository.findById(id).orElseThrow(() -> new RuntimeException(id + "Id Sahibi Yayın evi bulunamadı."));
         return publisherMapper.asOutput(p);
     }
 
@@ -32,7 +32,7 @@ public class PublisherService {
         if (isPublisherExist.isEmpty()) {
             return publisherRepository.save(request);
         }
-        throw new RuntimeException("Bu yayın evi daha önce sisteme kayıt olmuştur !!!");
+        throw new RuntimeException("Daha Önce Kaydolmuş Yayın Evi.");
     }
 
     public Publisher update(Long id, Publisher request) {
@@ -42,11 +42,11 @@ public class PublisherService {
         Optional<Publisher> isPublisherExist = publisherRepository.findByNameAndEstablishmentYear(request.getName(), request.getEstablishmentYear());
 
         if (publisherFromDb.isEmpty()) {
-            throw new RuntimeException(id + "Güncellemeye çalıştığınız yayın evi sistemde bulunamadı. !!!.");
+            throw new RuntimeException(id + "Güncelleme Yapılamadı: Yayın Evi Kayıtlı Değil.");
         }
 
         if (isPublisherExist.isPresent()) {
-            throw new RuntimeException("Bu yayın evi daha önce sisteme kayıt olmuştur !!!");
+            throw new RuntimeException("Daha Önce Sisteme Kayıt olmuş Yayın Evi.");
         }
 
         request.setId(id);
@@ -58,7 +58,7 @@ public class PublisherService {
         if (publisherFromDb.isPresent()) {
             publisherRepository.delete(publisherFromDb.get());
         } else {
-            throw new RuntimeException(id + "id li Yayın Evi sistemde bulunamadı !!!");
+            throw new RuntimeException(id + "Id Sahibi Yayın Evi Sistemde Bulunamadı.");
         }
     }
 }
